@@ -589,6 +589,10 @@ let checklistHTML = `
 ✅ 持ち物・旅行当日チェックリスト
 </h3>
 
+<div id="check-progress">
+準備状況を読み込み中...
+</div>
+
 `;
 
         checklistData.categories.forEach(category => {
@@ -612,6 +616,7 @@ checklistHTML += `
 <input 
 type="checkbox" 
 data-item="${item}"
+id="check-${item}"
 >
 
 <span>
@@ -640,8 +645,84 @@ checklistHTML += `
 
 
         checklistCard.innerHTML = checklistHTML;
-        
-        // ✅ チェック状態保存
+
+const checkboxes = checklistCard.querySelectorAll(
+  "input[type='checkbox']"
+);
+
+const progress = document.getElementById(
+  "check-progress"
+);
+
+
+function updateProgress() {
+
+  const total = checkboxes.length;
+
+  const checked = checklistCard.querySelectorAll(
+    "input[type='checkbox']:checked"
+  ).length;
+
+
+  const percent = Math.round(
+    (checked / total) * 100
+  );
+
+
+  progress.innerHTML = `
+    ${checked} / ${total} 完了 🎉
+    <br>
+    ${percent}%
+  `;
+
+}
+
+
+checkboxes.forEach(box => {
+
+  const saved = localStorage.getItem(
+    box.dataset.item
+  );
+
+
+  if (saved === "checked") {
+
+    box.checked = true;
+
+  }
+
+
+  box.addEventListener("change", () => {
+
+
+    if (box.checked) {
+
+      localStorage.setItem(
+        box.dataset.item,
+        "checked"
+      );
+
+
+    } else {
+
+      localStorage.removeItem(
+        box.dataset.item
+      );
+
+    }
+
+
+    updateProgress();
+
+  });
+
+
+});
+
+
+updateProgress();
+
+// ✅ チェック状態保存
 
 const checkboxes = checklistCard.querySelectorAll("input[type='checkbox']");
 
