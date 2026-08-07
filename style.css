@@ -150,3 +150,40 @@ footer {
   vertical-align: middle;
 }
 
+.checklist-card {
+  padding: 20px;
+}
+
+.check-category {
+  margin: 15px 0;
+  border-radius: 12px;
+}
+
+.check-category summary {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin: 8px 0;
+  background: #f7f7f7;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.check-item input {
+  width: 22px;
+  height: 22px;
+}
+
+.check-item input:checked + span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
