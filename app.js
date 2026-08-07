@@ -14,7 +14,7 @@ fetch("data/trip.json")
 
     // 日程表示
     const schedule = document.getElementById("schedule");
-
+    schedule.innerHTML = "";
     data.days.forEach(day => {
 
       const dayCard = document.createElement("div");
