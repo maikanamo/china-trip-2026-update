@@ -793,3 +793,15 @@ updateProgress();
   .catch(error => {
     console.error("データ読み込みエラー:", error);
   });
+  
+// PWA Service Worker登録
+
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener("load", () => {
+
+    navigator.serviceWorker.register("./service-worker.js");
+
+  });
+
+}
