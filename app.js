@@ -64,6 +64,65 @@ fetch("data/trip.json")
 
     });
 
+    // 🚆 寝台列車ボタン機能
+
+const trainButton = document.getElementById("train-button");
+const trainSection = document.getElementById("train-section");
+const trainCard = document.getElementById("train-card");
+
+if (trainButton) {
+
+  trainButton.addEventListener("click", () => {
+
+    const trainDay = data.days.find(day => day.train);
+
+    if (trainDay) {
+
+      trainCard.innerHTML = `
+
+        <div class="day-card train-card">
+
+          <h3>
+            🚆 ${trainDay.train.name}
+          </h3>
+
+          <p>
+            ${trainDay.train.departure}
+            ${trainDay.train.departureTime}
+            <br>
+            ↓
+            <br>
+            ${trainDay.train.arrival}
+            ${trainDay.train.arrivalTime}
+          </p>
+
+          <p>
+            🎫 発券番号<br>
+            ${trainDay.train.ticketNumber}
+          </p>
+
+          <p>
+            🚪 检票口<br>
+            ${trainDay.train.gate}
+          </p>
+
+          <p>
+            🛏 座席<br>
+            ${trainDay.train.seat.join("<br>")}
+          </p>
+
+        </div>
+
+      `;
+
+      trainSection.classList.remove("hidden");
+
+    }
+
+  });
+
+}
+
   })
 
   
