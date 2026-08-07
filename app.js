@@ -10,7 +10,64 @@ fetch("data/trip.json")
       ${data.trip.startDate} 〜 ${data.trip.endDate}<br>
       ${data.trip.cities.join(" × ")}
     `;
+    
+    // ⭐ 今日カード
 
+const todayTitle = document.getElementById("today-title");
+const todayContent = document.getElementById("today-content");
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const start = new Date("2026-08-11");
+const end = new Date("2026-08-17");
+
+if (today < start) {
+
+  const diff = Math.ceil((start - today) / (1000 * 60 * 60 * 24));
+
+  todayTitle.innerHTML = `✈️ 出発まであと${diff}日`;
+
+  todayContent.innerHTML = `
+    <p>📅 8/11 北京へ出発！</p>
+  `;
+
+} else if (today > end) {
+
+  todayTitle.innerHTML = "🎉 中国旅行おつかれさま！";
+
+  todayContent.innerHTML = `
+    <p>また次の旅行へ✈️</p>
+  `;
+
+} else {
+
+  const todayString =
+    String(today.getMonth() + 1).padStart(2, "0") +
+    "/" +
+    String(today.getDate()).padStart(2, "0");
+
+  const todayData = data.days.find(day =>
+    day.date.includes(todayString)
+  );
+
+  if (todayData) {
+
+    const first = todayData.schedule[0];
+
+    todayTitle.innerHTML = `🇨🇳 ${todayData.date}`;
+
+    todayContent.innerHTML = `
+      <p><strong>${todayData.title}</strong></p>
+      <p>📍 ${todayData.city}</p>
+      <p>🕒 ${first.time}</p>
+      <p>📍 ${first.place}</p>
+      <p>${first.activity}</p>
+    `;
+
+  }
+
+}
 
     // 日程表示
     const schedule = document.getElementById("schedule");
