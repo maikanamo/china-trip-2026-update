@@ -130,6 +130,76 @@ if (trainButton) {
   });
 
 }
+
+// 🏨 ホテルボタン機能
+
+const hotelButton = document.getElementById("hotel-button");
+const hotelSection = document.getElementById("hotel-section");
+const hotelCard = document.getElementById("hotel-card");
+
+
+if (hotelButton) {
+
+  hotelButton.addEventListener("click", () => {
+
+
+    if (!hotelSection.classList.contains("hidden")) {
+
+      hotelSection.classList.add("hidden");
+
+      return;
+
+    }
+
+
+    hotelCard.innerHTML = `
+
+      <div class="day-card">
+
+        <h3>🇨🇳 北京</h3>
+
+        <p>
+          🏨 ホテル ニューオータニ長富宮
+        </p>
+
+        <p>
+          CHECK IN<br>
+          8/11
+          <br><br>
+          CHECK OUT<br>
+          8/14
+        </p>
+
+
+        <hr>
+
+
+        <h3>🇨🇳 西安</h3>
+
+        <p>
+          🏨 西安印力诺富特酒店
+        </p>
+
+        <p>
+          CHECK IN<br>
+          8/15
+          <br><br>
+          CHECK OUT<br>
+          8/17
+        </p>
+
+      </div>
+
+    `;
+
+
+    hotelSection.classList.remove("hidden");
+
+
+  });
+
+}
+
 })
 
   
