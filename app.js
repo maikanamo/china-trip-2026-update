@@ -722,49 +722,6 @@ checkboxes.forEach(box => {
 
 updateProgress();
 
-// ✅ チェック状態保存
-
-const checkboxes = checklistCard.querySelectorAll("input[type='checkbox']");
-
-// 保存済みチェックを復元
-checkboxes.forEach(box => {
-
-  if (localStorage.getItem(box.dataset.item) === "checked") {
-
-    box.checked = true;
-
-  }
-
-});
-
-checkboxes.forEach(box => {
-
-  box.addEventListener("change", () => {
-
-    if (box.checked) {
-
-      localStorage.setItem(
-
-        box.dataset.item,
-
-        "checked"
-
-      );
-
-    } else {
-
-      localStorage.removeItem(
-
-        box.dataset.item
-
-      );
-
-    }
-
-  });
-
-})
-
         checklistSection.classList.remove("hidden");
 
 
