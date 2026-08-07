@@ -603,7 +603,6 @@ if (checklistButton) {
 
           `;
 
-
           category.items.forEach(item => {
 
 
@@ -622,7 +621,6 @@ if (checklistButton) {
 
           });
 
-
         });
 
 
@@ -634,7 +632,38 @@ if (checklistButton) {
 
 
         checklistCard.innerHTML = checklistHTML;
+        
+        // ✅ チェック状態保存
 
+const checkboxes = checklistCard.querySelectorAll("input[type='checkbox']");
+
+checkboxes.forEach(box => {
+
+  box.addEventListener("change", () => {
+
+    if (box.checked) {
+
+      localStorage.setItem(
+
+        box.dataset.item,
+
+        "checked"
+
+      );
+
+    } else {
+
+      localStorage.removeItem(
+
+        box.dataset.item
+
+      );
+
+    }
+
+  });
+
+})
 
         checklistSection.classList.remove("hidden");
 
