@@ -553,6 +553,99 @@ Trip.com予約済
 
 }
 
+// ✅ 持ち物チェック機能
+
+const checklistButton = document.getElementById("checklist-button");
+const checklistSection = document.getElementById("checklist-section");
+const checklistCard = document.getElementById("checklist-card");
+
+
+if (checklistButton) {
+
+  checklistButton.addEventListener("click", () => {
+
+
+    if (!checklistSection.classList.contains("hidden")) {
+
+      checklistSection.classList.add("hidden");
+
+      return;
+
+    }
+
+
+    fetch("data/checklist.json")
+
+      .then(response => response.json())
+
+      .then(checklistData => {
+
+
+        let checklistHTML = `
+
+          <div class="day-card">
+
+            <h3>
+              ✅ 持ち物・旅行当日チェックリスト
+            </h3>
+
+        `;
+
+
+        checklistData.categories.forEach(category => {
+
+
+          checklistHTML += `
+
+            <h4>
+              ${category.name}
+            </h4>
+
+          `;
+
+
+          category.items.forEach(item => {
+
+
+            checklistHTML += `
+
+              <label class="check-item">
+
+                <input type="checkbox">
+
+                ${item}
+
+              </label>
+
+            `;
+
+
+          });
+
+
+        });
+
+
+        checklistHTML += `
+
+          </div>
+
+        `;
+
+
+        checklistCard.innerHTML = checklistHTML;
+
+
+        checklistSection.classList.remove("hidden");
+
+
+      });
+
+
+  });
+
+}
+
     })
   .catch(error => {
     console.error("データ読み込みエラー:", error);
