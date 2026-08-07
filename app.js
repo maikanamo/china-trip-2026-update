@@ -73,7 +73,15 @@ const trainCard = document.getElementById("train-card");
 if (trainButton) {
 
   trainButton.addEventListener("click", () => {
+ 
+    if (!trainSection.classList.contains("hidden")) {
 
+    trainSection.classList.add("hidden");
+
+    return;
+
+  }
+    
     const trainDay = data.days.find(day => day.train);
 
     if (trainDay) {
@@ -122,8 +130,7 @@ if (trainButton) {
   });
 
 }
-
-  })
+})
 
   
   .catch(error => {
