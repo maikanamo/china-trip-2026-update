@@ -581,43 +581,53 @@ if (checklistButton) {
       .then(checklistData => {
 
 
-        let checklistHTML = `
+let checklistHTML = `
 
-          <div class="day-card">
+<div class="day-card checklist-card">
 
-            <h3>
-              ✅ 持ち物・旅行当日チェックリスト
-            </h3>
+<h3>
+✅ 持ち物・旅行当日チェックリスト
+</h3>
 
-        `;
-
+`;
 
         checklistData.categories.forEach(category => {
 
+checklistHTML += `
 
-          checklistHTML += `
+<details class="check-category">
 
-            <h4>
-              ${category.name}
-            </h4>
+<summary>
+📁 ${category.name}
+</summary>
 
-          `;
+`;
 
           category.items.forEach(item => {
 
 checklistHTML += `
 
-  <label class="check-item">
+<label class="check-item">
 
-    <input type="checkbox" data-item="${item}">
+<input 
+type="checkbox" 
+data-item="${item}"
+>
 
-    ${item}
+<span>
+${item}
+</span>
 
-  </label>
+</label>
 
 `;
 
-          });
+});
+checklistHTML += `
+
+</details>
+
+`;
 
         });
 
