@@ -605,19 +605,17 @@ if (checklistButton) {
 
           category.items.forEach(item => {
 
+checklistHTML += `
 
-            checklistHTML += `
+  <label class="check-item">
 
-              <label class="check-item">
+    <input type="checkbox" data-item="${item}">
 
-                <input type="checkbox">
+    ${item}
 
-                ${item}
+  </label>
 
-              </label>
-
-            `;
-
+`;
 
           });
 
@@ -636,6 +634,17 @@ if (checklistButton) {
         // ✅ チェック状態保存
 
 const checkboxes = checklistCard.querySelectorAll("input[type='checkbox']");
+
+// 保存済みチェックを復元
+checkboxes.forEach(box => {
+
+  if (localStorage.getItem(box.dataset.item) === "checked") {
+
+    box.checked = true;
+
+  }
+
+});
 
 checkboxes.forEach(box => {
 
