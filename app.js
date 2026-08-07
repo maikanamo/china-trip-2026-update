@@ -553,6 +553,7 @@ Trip.com予約済
 
 }
 
+})
   .catch(error => {
     console.error("データ読み込みエラー:", error);
   });
