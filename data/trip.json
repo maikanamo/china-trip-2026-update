@@ -1,1 +1,334 @@
+{
+  "trip": {
+    "title": "中国旅行 2026 北京・西安",
+    "startDate": "2026-08-11",
+    "endDate": "2026-08-17",
+    "country": "中国",
+    "cities": [
+      "北京",
+      "西安"
+    ]
+  },
 
+  "flights": [
+    {
+      "date": "2026-08-11",
+      "type": "departure",
+      "route": "成田 → 仁川 → 北京",
+      "departureTime": "09:20",
+      "arrivalTime": "15:50",
+      "arrivalAirport": "北京首都国際空港",
+      "pnr": "7Q4TQJ",
+      "eTicketNumbers": [
+        "988-4844774184",
+        "988-4844774185"
+      ],
+      "baggageNote": "仁川乗継時、荷物の受け取り・再預け不要"
+    },
+    {
+      "date": "2026-08-17",
+      "type": "return",
+      "route": "西安 → 香港 → 羽田",
+      "departureTime": "10:25",
+      "arrivalTime": "22:55",
+      "departureAirport": "西安咸陽国際空港",
+      "arrivalAirport": "羽田空港",
+      "pnr": [
+        "NH519D",
+        "B8IIRJ"
+      ],
+      "eTicketNumbers": [
+        "781-9447949264",
+        "781-9447949265"
+      ],
+      "baggageNote": "香港で荷物の受け取り・再預けが必要"
+    }
+  ],
+
+  "hotels": [
+    {
+      "city": "北京",
+      "name": "ホテル ニューオータニ長富宮",
+      "checkIn": "2026-08-11",
+      "checkOut": "2026-08-14",
+      "checkOutTime": "12:00"
+    },
+    {
+      "city": "西安",
+      "name": "西安印力诺富特酒店",
+      "checkIn": "2026-08-15",
+      "checkInTime": "14:00",
+      "checkOut": "2026-08-17"
+    }
+  ],
+
+  "days": [
+    {
+      "date": "2026-08-11",
+      "day": "火曜日",
+      "city": "北京",
+      "title": "北京到着・北京ダック",
+      "schedule": [
+        {
+          "time": "09:20",
+          "place": "成田空港",
+          "activity": "出発",
+          "category": "flight"
+        },
+        {
+          "time": "15:50",
+          "place": "北京首都国際空港",
+          "activity": "到着",
+          "category": "airport"
+        },
+        {
+          "time": "17:30",
+          "place": "ホテル ニューオータニ長富宮",
+          "activity": "チェックイン",
+          "category": "hotel"
+        },
+        {
+          "time": "18:30",
+          "place": "四季民福",
+          "activity": "北京ダック夕食",
+          "category": "food"
+        },
+        {
+          "time": "20:00",
+          "place": "王府井歩行街",
+          "activity": "散策",
+          "category": "spot"
+        }
+      ]
+    },
+
+    {
+      "date": "2026-08-12",
+      "day": "水曜日",
+      "city": "北京",
+      "title": "北京市内観光",
+      "schedule": [
+        {
+          "time": "08:30",
+          "place": "天安門広場",
+          "activity": "観光",
+          "category": "spot"
+        },
+        {
+          "time": "09:30",
+          "place": "故宮",
+          "activity": "観光",
+          "category": "spot"
+        },
+        {
+          "time": "13:30",
+          "place": "景山公園",
+          "activity": "故宮展望",
+          "category": "spot"
+        },
+        {
+          "time": "14:30",
+          "place": "鼓楼",
+          "activity": "観光",
+          "category": "spot"
+        },
+        {
+          "time": "15:30",
+          "place": "什刹海",
+          "activity": "散策",
+          "category": "spot"
+        },
+        {
+          "time": "17:30",
+          "place": "前門大街",
+          "activity": "散策",
+          "category": "spot"
+        }
+      ]
+    },
+
+    {
+      "date": "2026-08-13",
+      "day": "木曜日",
+      "city": "北京",
+      "title": "慕田峪長城・西部観光",
+      "schedule": [
+        {
+          "time": "06:30",
+          "place": "ホテル",
+          "activity": "出発"
+        },
+        {
+          "time": "08:00",
+          "place": "東直門駅B1出口",
+          "activity": "慕田峪バス乗車",
+          "category": "transport"
+        },
+        {
+          "time": "09:00",
+          "place": "慕田峪長城",
+          "activity": "長城観光",
+          "category": "world_heritage",
+          "route": [
+            "入口",
+            "シャトルバス",
+            "リフト",
+            "6号敵楼",
+            "スライダー下山"
+          ]
+        },
+        {
+          "time": "15:00",
+          "place": "中国人民抗日戦争紀念館",
+          "activity": "観光",
+          "category": "museum"
+        },
+        {
+          "time": "16:00",
+          "place": "盧溝橋",
+          "activity": "観光",
+          "category": "spot"
+        }
+      ]
+    },
+
+    {
+      "date": "2026-08-14",
+      "day": "金曜日",
+      "city": "北京",
+      "title": "北京最終日・寝台列車",
+      "schedule": [
+        {
+          "time": "09:00",
+          "place": "頤和園",
+          "activity": "観光",
+          "category": "spot"
+        },
+        {
+          "time": "11:30",
+          "place": "円明園",
+          "activity": "観光",
+          "category": "spot"
+        },
+        {
+          "time": "14:30",
+          "place": "天壇",
+          "activity": "観光",
+          "category": "spot"
+        },
+        {
+          "time": "16:30",
+          "place": "北京豊台駅",
+          "activity": "移動",
+          "category": "station"
+        },
+        {
+          "time": "20:41",
+          "place": "北京豊台駅",
+          "activity": "D967乗車",
+          "category": "train"
+        }
+      ],
+      "train": {
+        "name": "D967",
+        "departure": "北京豊台",
+        "arrival": "西安北",
+        "departureTime": "20:41",
+        "arrivalTime": "05:14",
+        "seat": [
+          "3车厢3号下铺",
+          "4号上铺"
+        ],
+        "ticketNumber": "E3W9973618",
+        "gate": "28A"
+      }
+    },
+
+    {
+      "date": "2026-08-15",
+      "day": "土曜日",
+      "city": "西安",
+      "title": "西安観光・漢服体験",
+      "schedule": [
+        {
+          "time": "05:14",
+          "place": "西安北駅",
+          "activity": "到着"
+        },
+        {
+          "time": "09:30",
+          "place": "西安城壁",
+          "activity": "観光"
+        },
+        {
+          "time": "11:30",
+          "place": "鐘楼",
+          "activity": "観光"
+        },
+        {
+          "time": "12:00",
+          "place": "回民街",
+          "activity": "昼食"
+        },
+        {
+          "time": "13:30",
+          "place": "超越汉服",
+          "activity": "漢服体験"
+        },
+        {
+          "time": "16:00",
+          "place": "大雁塔",
+          "activity": "観光"
+        },
+        {
+          "time": "18:00",
+          "place": "大唐不夜城",
+          "activity": "夜景観光"
+        }
+      ]
+    },
+
+    {
+      "date": "2026-08-16",
+      "day": "日曜日",
+      "city": "西安",
+      "title": "兵馬俑・華清池",
+      "schedule": [
+        {
+          "time": "09:00",
+          "place": "兵馬俑",
+          "activity": "観光"
+        },
+        {
+          "time": "14:30",
+          "place": "華清池",
+          "activity": "観光"
+        },
+        {
+          "time": "夜",
+          "place": "大唐芙蓉園",
+          "activity": "夜観光"
+        }
+      ]
+    },
+
+    {
+      "date": "2026-08-17",
+      "day": "月曜日",
+      "city": "西安",
+      "title": "帰国",
+      "schedule": [
+        {
+          "time": "10:25",
+          "place": "西安咸陽国際空港",
+          "activity": "出発"
+        },
+        {
+          "time": "22:55",
+          "place": "羽田空港",
+          "activity": "到着"
+        }
+      ]
+    }
+  ]
+}
